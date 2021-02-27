@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% block breadcrumb %}
+  <li class="breadcrumb-item active">Categories</li>
+{% endblock %}
+
+{% block content %}
+  <table class="table">
+      <tr>
+        <th>Categories</th>
+        <th>Products</th>
+      </tr>
+
+      <tbody>
+        {% for category in categories %}
+          <tr>
+            <td>
+              <a href="{% url 'product_list' category.pk %}">{{ category.name }}</a>
+            </td>
+            <td> {% with products=category.get_products_count %} 
+                <em>{{ products }}</em>
+            </td>
+          </tr>
+          {% endwith %}
+        {% endfor %}
+      </tbody>
+  </table>
+{% endblock %}
