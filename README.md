@@ -14,7 +14,7 @@ Installation
   python -m venv env
   sourse env/bin/activate
 3. Install apps
-  install -r requirements.txt
+  pip3 install -r requirements.txt
 
 DB
 in shop/mypro/settings.py find 
